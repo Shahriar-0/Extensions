@@ -16,7 +16,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                         .filter((href) => {
                             return fileTypes.some((fileType) => href.endsWith("." + fileType));
                         });
-                    let linksStr = links.join("\\n");
+                    let linksStr = links.join("\n");
                     return linksStr;
                 },
                 args: [category, fileTypes]
