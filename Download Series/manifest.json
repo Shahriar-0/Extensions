@@ -12,6 +12,7 @@
         ]
     },
     "browser_action": {
-        "default_title": "Copy Links"
+        "default_title": "Copy Links",
+        "default_popup": "popup.html"
     }
 }
