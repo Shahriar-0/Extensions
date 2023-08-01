@@ -1,14 +1,14 @@
 chrome.action.onClicked.addListener((tab) => {
-    chrome.scripting.executeScript(
+    chrome.tabs.executeScript(
+        tab.id,
         {
-            target: { tabId: tab.id },
-            function: () => {
+            code: `(() => {
                 let links = Array.from(document.querySelectorAll("a"))
                     .map((a) => a.href)
                     .filter((href) => href.endsWith(".mkv") || href.endsWith(".mp4"));
-                let linksStr = links.join("\n");
+                let linksStr = links.join("\\n");
                 return linksStr;
-            },
+            })()`,
         },
         (results) => {
             let linksStr = results[0];
@@ -28,16 +28,16 @@ chrome.action.onClicked.addListener((tab) => {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'copyLinks') {
         chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-            chrome.scripting.executeScript(
+            chrome.tabs.executeScript(
+                tabs[0].id,
                 {
-                    target: { tabId: tabs[0].id },
-                    function: () => {
+                    code: `(() => {
                         let links = Array.from(document.querySelectorAll("a"))
                             .map((a) => a.href)
                             .filter((href) => href.endsWith(".mkv") || href.endsWith(".mp4"));
-                        let linksStr = links.join("\n");
+                        let linksStr = links.join("\\n");
                         return linksStr;
-                    },
+                    })()`,
                 },
                 (results) => {
                     let linksStr = results[0];

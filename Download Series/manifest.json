@@ -4,7 +4,8 @@
     "version": "1.0",
     "permissions": [
         "activeTab",
-        "clipboardWrite"
+        "clipboardWrite",
+        "tabs"
     ],
     "background": {
         "service_worker": "background.js"
