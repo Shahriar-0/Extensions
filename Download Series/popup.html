@@ -11,6 +11,11 @@
             text-align: center;
         }
 
+        label {
+            display: inline-block;
+        }
+
+
         #meow {
             white-space: pre;
         }
@@ -55,21 +60,21 @@
 
 <body>
     <div id="meow">
-
-      ╱|、
+     ╱|、
      (˚ˎ 。7
      |、˜〵
         じしˍ,)ノ
     </div>
     <button id="copy-button">COPY</button>
-    <br/><br/>
+    <br /><br />
     <select id="category">
         <option value="movies">Movies</option>
         <option value="music">Music</option>
-        <option value="documents">Documents</option>
         <option value="images">Images</option>
+        <option value="documents">Documents</option>
+        <option value="images">Programming</option>
     </select>
-
+    <br />
     <div id="file-types">
         <div class="category active" data-category="movies">
             <label><input type="checkbox" name="file-type" value="mkv" checked>MKV</label>
