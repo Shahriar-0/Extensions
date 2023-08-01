@@ -3,11 +3,34 @@
 
 <head>
     <style>
-        #copy-button {
-            background-color: blue;
+        body {
+            font-family: monospace;
+            background-color: black;
             color: white;
-            padding: 8px 16px;
+            white-space: pre;
+            text-align: center;
+        }
+
+        .yellow {
+            color: #ffcc00;
+        }
+
+        .gray {
+            color: #333;
+        }
+
+        #copy-button {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
+        }
+
+        #copy-button:hover {
+            background-color: #e6b800;
         }
 
         #success-message {
@@ -23,6 +46,13 @@
 </head>
 
 <body>
+    <div id="meow" align="center">
+        <pre>
+        ╱|、
+        (˚ˎ 。7  
+            |、˜〵          
+        じしˍ,)ノ
+    </div>
     <button id="copy-button">COPY</button>
     <span id="success-message">✔️ Copied!</span>
     <span id="failure-message">😞 Found nothing</span>
