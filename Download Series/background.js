@@ -14,7 +14,12 @@ chrome.action.onClicked.addListener((tab) => {
             chrome.scripting.executeScript({
                 target: { tabId: tab.id },
                 function: (linksStr) => {
-                    navigator.clipboard.writeText(linksStr);
+                    let textarea = document.createElement('textarea');
+                    textarea.value = linksStr;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
                 },
                 args: [linksStr]
             }, () => {
@@ -46,7 +51,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                     chrome.scripting.executeScript({
                         target: { tabId: tabs[0].id },
                         function: (linksStr) => {
-                            navigator.clipboard.writeText(linksStr);
+                            let textarea = document.createElement('textarea');
+                            textarea.value = linksStr;
+                            document.body.appendChild(textarea);
+                            textarea.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(textarea);
                         },
                         args: [linksStr]
                     }, () => {
