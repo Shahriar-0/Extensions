@@ -5,7 +5,7 @@
     "permissions": [
         "activeTab",
         "clipboardWrite",
-        "tabs"
+        "scripting"
     ],
     "background": {
         "service_worker": "background.js"
