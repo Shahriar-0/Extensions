@@ -10,6 +10,7 @@ chrome.action.onClicked.addListener((tab) => {
 
                 let success = false;
                 if (linksStr) {
+                    document.focus();
                     navigator.clipboard.writeText(linksStr).then(() => {
                         success = true;
                         chrome.runtime.sendMessage({ success: true });
