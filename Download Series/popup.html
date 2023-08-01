@@ -38,17 +38,76 @@
             display: none;
             color: red;
         }
+
+        .category {
+            display: none;
+        }
+
+        .category.active {
+            display: block;
+        }
+
+        .category:not(.active) {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
     <div id="meow">
+
       ╱|、
      (˚ˎ 。7
      |、˜〵
         じしˍ,)ノ
     </div>
     <button id="copy-button">COPY</button>
+    <br/><br/>
+    <select id="category">
+        <option value="movies">Movies</option>
+        <option value="music">Music</option>
+        <option value="documents">Documents</option>
+        <option value="images">Images</option>
+    </select>
+
+    <div id="file-types">
+        <div class="category active" data-category="movies">
+            <label><input type="checkbox" name="file-type" value="mkv" checked>MKV</label>
+            <label><input type="checkbox" name="file-type" value="mp4">MP4</label>
+            <label><input type="checkbox" name="file-type" value="avi">AVI</label>
+            <label><input type="checkbox" name="file-type" value="mov">MOV</label>
+            <label><input type="checkbox" name="file-type" value="wmv">WMV</label>
+            <label><input type="checkbox" name="file-type" value="flv">FLV</label>
+        </div>
+        <div class="category" data-category="music">
+            <label><input type="checkbox" name="file-type" value="mp3">MP3</label>
+            <label><input type="checkbox" name="file-type" value="wav">WAV</label>
+            <label><input type="checkbox" name="file-type" value="wma">WMA</label>
+            <label><input type="checkbox" name="file-type" value="aac">AAC</label>
+        </div>
+        <div class="category" data-category="images">
+            <label><input type="checkbox" name="file-type" value="jpg">JPG</label>
+            <label><input type="checkbox" name="file-type" value="png">PNG</label>
+            <label><input type="checkbox" name="file-type" value="gif">GIF</label>
+            <label><input type="checkbox" name="file-type" value="bmp">BMP</label>
+            <label><input type="checkbox" name="file-type" value="svg">SVG</label>
+        </div>
+        <div class="category" data-category="documents">
+            <label><input type="checkbox" name="file-type" value="pdf">PDF</label>
+            <label><input type="checkbox" name="file-type" value="doc">DOC</label>
+            <label><input type="checkbox" name="file-type" value="docx">DOCX</label>
+            <label><input type="checkbox" name="file-type" value="xls">XLS</label>
+            <label><input type="checkbox" name="file-type" value="xlsx">XLSX</label>
+        </div>
+        <div class="category" data-category="programming">
+            <label><input type="checkbox" name="file-type" value="js">JS</label>
+            <label><input type="checkbox" name="file-type" value="py">PY</label>
+            <label><input type="checkbox" name="file-type" value="java">JAVA</label>
+            <label><input type="checkbox" name="file-type" value="cpp">CPP</label>
+            <label><input type="checkbox" name="file-type" value="html">HTML</label>
+        </div>
+    </div>
+
     <span id="success-message">✔️ Copied!</span>
     <span id="failure-message">😞 Found nothing</span>
     <script src="popup.js"></script>
