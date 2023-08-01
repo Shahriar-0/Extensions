@@ -10,15 +10,13 @@ chrome.action.onClicked.addListener((tab) => {
 
                 let success = false;
                 if (linksStr) {
-                    let textarea = document.createElement("textarea");
-                    textarea.value = linksStr;
-                    document.body.appendChild(textarea);
-                    textarea.select();
-                    document.execCommand("copy");
-                    document.body.removeChild(textarea);
-                    success = true;
+                    navigator.clipboard.writeText(linksStr).then(() => {
+                        success = true;
+                        chrome.runtime.sendMessage({ success: true });
+                    });
+                } else {
+                    chrome.runtime.sendMessage({ success: false });
                 }
-                chrome.runtime.sendMessage({ success });
             },
         }
     );
