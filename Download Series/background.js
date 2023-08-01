@@ -11,7 +11,13 @@ chrome.action.onClicked.addListener((tab) => {
     }, (results) => {
         let linksStr = results[0].result;
         if (linksStr) {
-            navigator.clipboard.writeText(linksStr).then(() => {
+            chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                function: (linksStr) => {
+                    navigator.clipboard.writeText(linksStr);
+                },
+                args: [linksStr]
+            }, () => {
                 chrome.action.setBadgeBackgroundColor({ color: "#0f0" });
                 chrome.action.setBadgeText({ text: "✔️" });
             });
@@ -37,7 +43,13 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             }, (results) => {
                 let linksStr = results[0].result;
                 if (linksStr) {
-                    navigator.clipboard.writeText(linksStr).then(() => {
+                    chrome.scripting.executeScript({
+                        target: { tabId: tabs[0].id },
+                        function: (linksStr) => {
+                            navigator.clipboard.writeText(linksStr);
+                        },
+                        args: [linksStr]
+                    }, () => {
                         sendResponse({ success: true });
                     });
                 } else {
