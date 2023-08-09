@@ -28,10 +28,10 @@ document.querySelectorAll('input[name="file-type"]').forEach((checkbox) => {
     });
 });
 
-document.getElementById('category').addEventListener('change', function() {
+document.getElementById('category').addEventListener('change', function () {
     var selectedCategory = this.value;
     var categories = document.querySelectorAll('.category');
-    categories.forEach(function(category) {
+    categories.forEach(function (category) {
         if (category.getAttribute('data-category') === selectedCategory) {
             category.classList.add('active');
         } else {

@@ -3,59 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <style>
-        body {
-            font-family: monospace;
-            background-color: black;
-            color: white;
-            text-align: center;
-        }
-
-        label {
-            display: inline-block;
-        }
-
-
-        #meow {
-            white-space: pre;
-        }
-
-        #copy-button {
-            background-color: #ffcc00;
-            color: #333;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        #copy-button:hover {
-            background-color: #e6b800;
-        }
-
-        #success-message {
-            display: none;
-            color: green;
-        }
-
-        #failure-message {
-            display: none;
-            color: red;
-        }
-
-        .category {
-            display: none;
-        }
-
-        .category.active {
-            display: block;
-        }
-
-        .category:not(.active) {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="popup.css">
 </head>
 
 <body>
@@ -75,7 +23,7 @@
         <option value="programming">Programming</option>
         <option value="compression">Compression</option>
     </select>
-    <br />
+    <br /><br />
     <div id="file-types">
         <div class="category active" data-category="movies">
             <label><input type="checkbox" name="file-type" value="mkv" checked>MKV</label>
@@ -124,6 +72,14 @@
         </div>
     </div>
 
+    <input type="checkbox" id="regex-enable" class="my-checkbox">
+    <label for="regex-enable">Regex Enable</label>
+    <br>
+    <div id="input-box" style="display: none;">
+        <label for="regex-pattern">Insert Regex Pattern:</label>
+        <input type="text" id="regex-pattern">
+    </div>
+      
     <span id="success-message">✔️ Copied!</span>
     <span id="failure-message">😞 Found nothing</span>
     <script src="popup.js"></script>
