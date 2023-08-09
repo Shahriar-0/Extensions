@@ -27,13 +27,17 @@ label {
     background-color: #e6b800;
 }
 
-#success-message {
+#success-message,
+#failure-message {
     display: none;
+    margin-top: 5px;
+}
+
+#success-message {
     color: green;
 }
 
 #failure-message {
-    display: none;
     color: red;
 }
 

@@ -3,10 +3,20 @@ document.getElementById('copy-button').addEventListener('click', () => {
         if (response.success) {
             document.getElementById('success-message').style.display = 'inline';
             document.getElementById('failure-message').style.display = 'none';
+            document.getElementById('success-message').style.opacity = '1';
+            document.getElementById('failure-message').style.opacity = '0';
         } else {
             document.getElementById('success-message').style.display = 'none';
             document.getElementById('failure-message').style.display = 'inline';
+            document.getElementById('success-message').style.opacity = '0';
+            document.getElementById('failure-message').style.opacity = '1';
         }
+        setTimeout(() => {
+            document.getElementById('success-message').style.opacity = '0';
+            document.getElementById('failure-message').style.opacity = '0';
+            document.getElementById('success-message').style.display = 'none';
+            document.getElementById('failure-message').style.display = 'none';
+        }, 5000);
     });
 });
 
@@ -39,3 +49,20 @@ document.getElementById('category').addEventListener('change', function () {
         }
     });
 });
+
+document.getElementById('regex-pattern').addEventListener('input', (event) => {
+    chrome.runtime.sendMessage({ action: 'setRegexPattern', regexPattern: event.target.value });
+});
+
+document.getElementById("regex-enable").addEventListener("click", showInputBox);
+
+function showInputBox() {
+    var checkBox = document.getElementById("regex-enable");
+    var inputBox = document.getElementById("input-box");
+    if (checkBox.checked == true) {
+        inputBox.style.display = "block";
+    } else {
+        inputBox.style.display = "none";
+        chrome.runtime.sendMessage({ action: 'setRegexPattern', regexPattern: '' });
+    }
+}
