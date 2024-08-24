@@ -16,7 +16,7 @@ function extractData() {
     }
     // remove word before the only the first ":"
     titleElement.textContent = titleElement.textContent.replace(/^[^:]*:/, " ");
-    const title = titleElement.textContent.trim().replace(/[^a-zA-Z0-9]/g, " "); // Sanitize title
+    const title = titleElement.textContent.trim().replace(/[^a-zA-Z0-9]+/g, " "); // Sanitize title
 
     // Send data to background script
     chrome.runtime.sendMessage({ pdfLink: pdfLink, title: title });
