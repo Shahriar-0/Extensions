@@ -1,0 +1,78 @@
+body {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+}
+
+#meow {
+    white-space: pre;
+}
+
+#copy-button {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#copy-button:hover {
+    background-color: #e6b800;
+}
+
+#success-message,
+#failure-message {
+    display: none;
+    margin-top: 5px;
+}
+
+#success-message {
+    color: green;
+}
+
+#failure-message {
+    color: red;
+}
+
+.category {
+    display: none;
+}
+
+.category.active {
+    display: block;
+}
+
+.category:not(.active) {
+    display: none;
+}
+
+.my-checkbox {
+    margin-top: 10px;
+    vertical-align: middle;
+}
+
+label[for="regex-enable"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 6px;
+}
+
+.regex-enable-checkbox {
+    margin-right: 10px;
+}
+
+#input-box {
+    margin-top: 10px;
+}
+
+#regex-pattern {
+    margin-top: 10px;
+    width: 100px;
+}
