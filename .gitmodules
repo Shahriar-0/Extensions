@@ -1,0 +1,12 @@
+[submodule "scripts/arXiv/downloadArxivPDF"]
+	path = scripts/arXiv/downloadArxivPDF
+	url = https://gist.github.com/Shahriar-0/d9bdba745b3cb91a8d0cdef84106d054
+[submodule "scripts/github/GithubBookmark"]
+	path = scripts/github/GithubBookmark
+	url = https://gist.github.com/Shahriar-0/b9e2d50ed7507d72e5bbc4cf1d89364d
+[submodule "scripts/github/GithubBookmarkManager"]
+	path = scripts/github/GithubBookmarkManager
+	url = https://gist.github.com/Shahriar-0/931ff885982f4e4d204677bb0b3064c3
+[submodule "scripts/lyrics.lyricfind/CopyLyricsButton"]
+	path = scripts/lyrics.lyricfind/CopyLyricsButton
+	url = https://gist.github.com/Shahriar-0/8b53653b043b7ec7d4e1d8c6265ea942
