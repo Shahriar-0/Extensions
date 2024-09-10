@@ -13,3 +13,6 @@
 [submodule "scripts/storm-genie/Storm-Genie-Modifier"]
 	path = scripts/storm-genie/Storm-Genie-Modifier
 	url = https://gist.github.com/Shahriar-0/fc9b976082ff97fcaab03ae3c4051745
+[submodule "scripts/freedium/toFreedium"]
+	path = scripts/freedium/toFreedium
+	url = https://gist.github.com/Shahriar-0/72b678319926358b12a47eb06c3c11de
