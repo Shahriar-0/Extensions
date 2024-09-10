@@ -10,3 +10,6 @@
 [submodule "scripts/lyrics.lyricfind/CopyLyricsButton"]
 	path = scripts/lyrics.lyricfind/CopyLyricsButton
 	url = https://gist.github.com/Shahriar-0/8b53653b043b7ec7d4e1d8c6265ea942
+[submodule "scripts/storm-genie/Storm-Genie-Modifier"]
+	path = scripts/storm-genie/Storm-Genie-Modifier
+	url = https://gist.github.com/Shahriar-0/fc9b976082ff97fcaab03ae3c4051745
